@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#15130f" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="Uma palavra para este momento. Receba um versículo bíblico aleatório da Almeida 1911 ao aproximar seu celular do chaveiro Bíblia Sagrada NFC." />
+    <meta property="og:title" content="Bíblia Sagrada NFC" />
+    <meta property="og:description" content="Uma palavra para você, diretamente da Bíblia." />
+    <meta property="og:type" content="website" />
+    <title>Bíblia Sagrada NFC — Uma palavra para você</title>
+    <link rel="icon" href="./logo.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <div class="ambient ambient-left" aria-hidden="true"></div>
+      <div class="ambient ambient-right" aria-hidden="true"></div>
+
+      <header class="site-header" aria-label="Identidade do site">
+        <a class="brand" href="./" aria-label="Bíblia Sagrada NFC, página inicial">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 44 44" role="img">
+              <path d="M22 7v30M14.5 14.5h15" />
+              <circle cx="22" cy="22" r="16.5" />
+            </svg>
+          </span>
+          <span class="brand-name">Bíblia Sagrada <em>NFC</em></span>
+        </a>
+        <a class="search-shortcut" href="#search" aria-label="Pesquisar na Bíblia">⌕ <span>pesquisar</span></a>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div class="eyebrow"><span></span> UMA PALAVRA PARA VOCÊ <span></span></div>
+        <h1 id="page-title">Abra espaço para<br /><strong>uma nova palavra.</strong></h1>
+        <p class="hero-copy">Aproxime-se da Palavra. Encontre uma mensagem<br class="desktop-only" /> para este momento.</p>
+      </section>
+
+      <section class="word-area" aria-live="polite" aria-busy="true">
+        <div class="verse-card" id="verse-card">
+          <div class="card-topline">
+            <span class="card-label">SUA PALAVRA DE HOJE</span>
+            <span class="verse-count" id="verse-count">—</span>
+          </div>
+
+          <div class="book-illustration" aria-hidden="true">
+            <svg viewBox="0 0 180 70" role="img">
+              <path class="book-shadow" d="M18 57c25 3 42 2 72-6 30 8 47 9 72 6" />
+              <path class="book-cover" d="M24 50c21 3 42-1 66-10 24 9 45 13 66 10l-4 8c-20 4-40 1-62-8-22 9-42 12-62 8z" />
+              <path class="book-page page-left" d="M27 47c22 3 42-2 63-11V18c-25 8-43 10-65 7-2 8-1 15 2 22z" />
+              <path class="book-page page-right" d="M153 47c-22 3-42-2-63-11V18c25 8 43 10 65 7 2 8 1 15-2 22z" />
+              <path class="book-spine" d="M90 18v20" />
+              <path class="book-line" d="M34 31c17 2 32 0 48-5M35 37c16 2 30 0 44-4M146 31c-17 2-32 0-48-5M145 37c-16 2-30 0-44-4" />
+              <path class="book-gilt" d="M22 55c24 4 45 0 68-9 23 9 44 13 68 9" />
+            </svg>
+          </div>
+
+          <div class="reference" id="reference">Carregando uma palavra...</div>
+          <blockquote class="verse-text" id="verse-text">A Palavra está sendo preparada para você.</blockquote>
+          <div class="translation-note"><span class="tiny-cross">✦</span> Almeida 1911 <span class="dot">·</span> texto de referência em domínio público</div>
+        </div>
+
+        <div class="actions" aria-label="Ações do versículo">
+          <button class="button button-primary" id="new-verse" type="button">
+            <span class="button-icon" aria-hidden="true">↻</span>
+            <span>NOVA PALAVRA</span>
+          </button>
+          <button class="button button-secondary" id="share-whatsapp" type="button">
+            <span class="whatsapp-icon" aria-hidden="true">⌁</span>
+            <span>COMPARTILHAR</span>
+          </button>
+        </div>
+
+        <p class="hint"><span class="hint-line"></span> Que esta palavra encontre você no momento certo. <span class="hint-line"></span></p>
+      </section>
+
+      <section class="search-area" id="search" aria-labelledby="search-title">
+        <div class="search-heading">
+          <span class="section-kicker">CONSULTA RÁPIDA</span>
+          <h2 id="search-title">Pesquise na Bíblia</h2>
+          <p>Busque por uma palavra, livro ou referência como <strong>João 3:16</strong>.</p>
+        </div>
+        <form class="search-form" id="search-form">
+          <label class="sr-only" for="search-input">Digite uma palavra ou referência bíblica</label>
+          <div class="search-field">
+            <span aria-hidden="true">⌕</span>
+            <input id="search-input" name="search" type="search" placeholder="Ex.: amor, Salmos ou João 3:16" autocomplete="off" />
+            <button type="submit" aria-label="Buscar">BUSCAR</button>
+          </div>
+        </form>
+        <div class="search-meta" id="search-meta" aria-live="polite">Digite algo para começar sua busca.</div>
+        <div class="search-results" id="search-results" aria-live="polite"></div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-brand">
+          <img src="./assets/kenon-print-logo.jpg" alt="Kenon Print" />
+          <span>UMA CRIAÇÃO <strong>KENON PRINT</strong></span>
+        </div>
+        <span class="footer-cross">✦</span>
+        <span>SEM LOGIN · SEM APLICATIVO</span>
+      </footer>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <noscript>
+      <div class="noscript-message">Ative o JavaScript para receber uma palavra bíblica aleatória.</div>
+    </noscript>
+  </body>
+</html>
